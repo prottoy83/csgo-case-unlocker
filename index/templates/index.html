@@ -1,0 +1,57 @@
+{% load static %}
+<!Doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Case Simulator - Moonlight Software</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'stylesheet/main.css'%}">
+        <link rel="stylesheet" href="{% static 'stylesheet/text.css'%}">
+    </head>
+    <body>
+        <header>
+            <h1> <span class="csgo-text">CS:GO</span> Case Opener </h1>
+        </header>
+        
+        <div class="case-showlist">
+            <h2> Available Cases </h2>
+
+            <section class="case-showlist-section">
+                {% for case in case %}
+                <div class="case rw" data-name="{{case.id}}">
+                    <div class="img_frame">
+                        <image src="{{case.pic.url}}" id="case_image" ></image>
+                    </div>
+                    <section>
+                        <p>{{case.title}}</p>
+                        <sm>${{case.price}}</sm>
+                    </section>
+                </div>
+                {% endfor %}
+                
+                {% comment %} <div class="case" data-name="Case2">
+                    <image src="image/case/1.png" height="120px"></image>
+                    <section>
+                        <p>Case Name </p>
+                        <sm>$0.01</sm>
+                    </section>
+                </div>
+                <div class="case" class="casebox" data-name="Case3">
+                    <image src="image/case/1.png" height="120px"></image>
+                    <section>
+                        <p>Case Name </p>
+                        <sm>$0.00</sm>
+                    </section>
+                </div> {% endcomment %}
+                
+            </section>
+            <button class="button-n" onclick="spin_case()">spin!</button>
+        </div>
+
+        <script src="{% static 'script/jquery.js'%}"></script>
+        <script src="{% static 'script/main.js'%}"></script>
+        <script src="{% static 'script/spin.js'%}"></script>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+.csgo-text{
+    background: url("../image/csgo-texture.png") no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip:text;
+    background-clip:text; 
+}
+
+.case-spinner .case{
+    margin: 10px auto;
+
+}
