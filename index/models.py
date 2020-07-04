@@ -1,18 +1,18 @@
 from django.db import models
 
 choice=(
-    ('rare','RARE'),
-    ('low','LOW'),
+    ('rare','Extreme Rare'),
+    ('low','Rare'),
     ('medium','Medium'),
-    ('high','HIGH'),
-    ("extreme",'EXTREME')
+    ('high','Common'),
+    ("extreme",'Very Common')
 )
 
 
 class item(models.Model):
     title=models.CharField(max_length=50)
     img=models.ImageField()
-    probability=models.CharField(max_length=50,choices=choice,default='normal')
+    probability=models.CharField(max_length=50,choices=choice,default='medium')
 
     def __str__(self):
         return self.title
